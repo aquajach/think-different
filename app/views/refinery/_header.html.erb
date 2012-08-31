@@ -1,0 +1,9 @@
+<div id='header_container'>
+  <div id='logo'>
+    <%= link_to image_tag("logo1.jpg", :size=>"135x63"), refinery.root_path %>
+  </div>
+  <%= render(:partial => "/refinery/menu", :locals => {
+               :dom_id => 'menu',
+               :css => 'menu', :hide_children => true
+           }, :hide_sections => :body_content_title) %>
+</div>
