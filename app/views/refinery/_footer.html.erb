@@ -2,17 +2,17 @@
   <ul>
     <span>Quick Links:</span>
   </ul>
-  <% Refinery::Page.where(:parent_id => nil).each do |parent_page| %>
+  <% Refinery::Page.where(:parent_id => nil).order("lft ASC").each do |parent_page| %>
     <ul>
       <p><%= link_to parent_page.title, parent_page.path %></p>
-      <% parent_page.children.first(6).each do |child_page| %>
+      <% parent_page.children.order("lft ASC").first(6).each do |child_page| %>
         <li>
           <%= link_to child_page.title, child_page.nested_path %>
         </li>
       <% end %>
-      <% unless (parent_page.children - parent_page.children.first(6)).blank? %>
+      <% unless (parent_page.children.order("lft ASC") - parent_page.children.order("lft ASC").first(6)).blank? %>
         </ul><ul><p>&nbsp;</p>
-        <% (parent_page.children - parent_page.children.first(6)).each do |child_page| %>
+        <% (parent_page.children.order("lft ASC") - parent_page.children.order("lft ASC").first(6)).each do |child_page| %>
           <li>
             <%= link_to child_page.title, child_page.nested_path %>
           </li>
