@@ -1,7 +1,7 @@
 <% unless page.children.empty? %>
-    <ul>
+    <ul id="service_menu">
       <% page.children.each do |service|%>
-        <li>
+        <li class='<%= "selected" if service.id == @page.id%>'>
           <%= link_to service.title, service.nested_path %>
         </li>
       <% end %>

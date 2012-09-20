@@ -13,3 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(document).ready(function(){
+    $('#service_menu li').hoverIntent({
+        over : function(){
+            $(this).animate({
+                'left' : '+=30px'
+            }, '500');
+
+        },
+        timeout :500,
+        out : function(){
+//            $('img', this).hide();
+//            $('a', this).animate({
+//                'left' : '-=30px'
+//            }, 'slow')
+        }
+    })
+})
