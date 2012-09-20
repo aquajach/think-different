@@ -101,12 +101,13 @@ header#header{
   -webkit-border-radius: 10px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  min-height: 500px;
   section#side_body_content{
     float: left;
-    margin: 30px 0 30px 0;
-    width: 300px;
+    margin: 30px 0;
+    width: 330px;
     p {
-      margin: 0;
+      margin: 0 30px;
     }
     br{
       display:none;
@@ -116,30 +117,44 @@ header#header{
       list-style: none;
       list-style-type: none;
       padding-left: 0;
+      margin: 0;
       li{
         width: 150px;
-        height: 50px;
+        height: 20px;
         list-style-image:none;
-        padding: 5px 5px;
-        margin: 5px 0;
-        background: grey;
-        position: relative;
+        padding: 0 5px 10px 5px;
+        //margin: 10px 0;
+        margin-bottom: 20px;
+        border: 1px solid black;
+        border-left: none;
+        background-image: -webkit-gradient(
+        	linear,
+        	left bottom,
+        	right bottom,
+        	color-stop(0, rgb(163,163,163)),
+        	color-stop(1, rgb(255,255,255))
+        );
         -webkit-border-top-right-radius: 5px;
         -webkit-border-bottom-right-radius: 5px;
         -moz-border-radius-topright: 5px;
         -moz-border-radius-bottomright: 5px;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        a{
-
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        span{
+          position: relative;
           text-decoration: none;
           color: black;
           font-size: 14px;
+          float: right;
+          margin-right: 10px;
+          padding-top: 6px;
         }
       }
       li.selected{
-        a{
-          color: #E43507;
+        background: red;
+        span{
+          color: #EDEDED;
+          padding-top: 6px;
         }
       }
     }
@@ -148,6 +163,19 @@ header#header{
   section#body_content{
     float: left;
     width: 600px;
+    margin: 30px 0;
+    font-size: 14px;
+    p{
+      margin:0;
+      line-height: 25px;
+      padding-bottom: 20px;
+      span{
+        padding-right: 50px;
+      }
+    }
+    li{
+      padding-bottom: 10px;
+    }
   }
 }
 
@@ -155,7 +183,7 @@ footer{
   width: 100%;
   background: #961100;
   text-align: left;
-  color: black;
+  color: #EDEDED;
   text-decoration: none;
   text-align: center;
 
@@ -168,7 +196,7 @@ footer{
       p{
         margin: 0 0 10px;
         a{
-          color: black;
+          color: #EDEDED;
           text-decoration: none;
           font-size: 15px;
           font-weight: bold;
@@ -179,7 +207,7 @@ footer{
         list-style: none;
         list-style-type: none;
         a{
-          color: black;
+          color: #EDEDED;
           text-decoration: none;
         }
       }

@@ -4,8 +4,8 @@
   </ul>
   <% Refinery::Page.where(:parent_id => nil).order("lft ASC").each do |parent_page| %>
     <ul>
-      <p><%= link_to parent_page.title, parent_page.path %></p>
-      <% parent_page.children.order("lft ASC").first(6).each do |child_page| %>
+      <p><%= link_to parent_page.title, parent_page.link_url %></p>
+      <% parent_page.children.where(:show_in_menu=> true).order("lft ASC").first(6).each do |child_page| %>
         <li>
           <%= link_to child_page.title, child_page.nested_path %>
         </li>

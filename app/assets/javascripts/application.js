@@ -17,16 +17,23 @@ $(document).ready(function(){
     $('#service_menu li').hoverIntent({
         over : function(){
             $(this).animate({
-                'left' : '+=30px'
-            }, '500');
+                'width' : '200px'
+            }, 300);
+
+//            $('a', this).animate({
+//                'left' : '+=30px'
+//            }, '500');
 
         },
-        timeout :500,
+        timeout :300,
         out : function(){
-//            $('img', this).hide();
+            $(this).animate({
+                'width' : '150px'
+            }, 300);
+
 //            $('a', this).animate({
-//                'left' : '-=30px'
-//            }, 'slow')
+//                'left' : '+=30px'
+//            }, '500');
         }
     })
 })
