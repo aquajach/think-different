@@ -5,6 +5,11 @@ ThinkDifferent::Application.routes.draw do
   # If you would like to change where this extension is mounted, simply change the :at option to something different.
   #
   # We ask that you don't use the :as option here, as Refinery relies on it being the default of "refinery"
+  constraints(:host => /think-different.com.hk/) do
+    root :to => redirect("http://www.think-different.com.hk")
+    match '/*path', :to => redirect {|params| "http://www.think-different.com.hk/#{params[:path]}"}
+  end
+
   mount Refinery::Core::Engine, :at => '/'
 
   # The priority is based upon order of creation:
@@ -63,4 +68,5 @@ ThinkDifferent::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
 end
