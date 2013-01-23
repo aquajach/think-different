@@ -53,7 +53,7 @@ gem 'refinerycms-i18n', '~> 2.0.0'
 
 #gem 'refinerycms-services', :path => 'vendor/extensions'
 group :development, :test do
-  gem 'sqlite3'
+  #gem 'sqlite3'
 end
 
 group :production do
