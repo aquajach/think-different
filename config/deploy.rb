@@ -1,6 +1,6 @@
 require "bundler/capistrano"
 
-server "106.187.101.159", :web, :app, :db, primary: true
+server "192.34.60.58", :web, :app, :db, primary: true
 
 set :application, "think-different"
 set :user, "jack"
@@ -11,8 +11,10 @@ set :use_sudo, false
 set :scm, "git"
 set :repository, "git@github.com:aquajach/#{application}.git"
 set :branch, "master"
+set :bundle_cmd, "/home/#{user}/.rbenv/shims/bundle"
+set :bundle_flags, ""
 
-
+default_environment['PATH'] = "/usr/local/bin:/usr/bin:/bin:/opt/bin:$PATH"
 # Load RVM's capistrano plugin.
 #set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"") # Read from local system
 #

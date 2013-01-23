@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+#ruby '1.9.3'
 
 gem 'rails', '3.2.7'
 
@@ -17,8 +17,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'compass-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -53,5 +51,9 @@ gem 'refinerycms-i18n', '~> 2.0.0'
 #  gem 'refinerycms-search', '~> 2.0.0'
 #  gem 'refinerycms-page-images', '~> 2.0.0'
 
-gem 'refinerycms-services', :path => 'vendor/extensions'
+#gem 'refinerycms-services', :path => 'vendor/extensions'
+gem 'sqlite3'
 
+group :production do
+  gem 'therubyracer', :platforms => :ruby
+end
