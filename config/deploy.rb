@@ -14,7 +14,6 @@ set :branch, "master"
 set :bundle_cmd, "/home/#{user}/.rbenv/shims/bundle"
 set :bundle_flags, ""
 
-default_environment['PATH'] = "/usr/local/bin:/usr/bin:/bin:/opt/bin:$PATH"
 # Load RVM's capistrano plugin.
 #set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"") # Read from local system
 #
