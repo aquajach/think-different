@@ -52,7 +52,9 @@ gem 'refinerycms-i18n', '~> 2.0.0'
 #  gem 'refinerycms-page-images', '~> 2.0.0'
 
 #gem 'refinerycms-services', :path => 'vendor/extensions'
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3'
+end
 
 group :production do
   gem 'therubyracer', :platforms => :ruby
